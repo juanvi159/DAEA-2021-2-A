@@ -48,6 +48,15 @@ namespace ConsoleApp1
             } while (primos <= 10);
             Console.ReadKey();
         }
+        static double Celsius(double a)
+        {
+            return (5 * (a - 32)) / 9;
+        }
+
+        static double Fahrenheit(double a)
+        {
+            return ((9 * a) / 5) + 32;
+        }
         static void Raiz()
         {
             for (int i = 1; i <= 10; i++)
@@ -68,9 +77,13 @@ namespace ConsoleApp1
                 Console.WriteLine("[4] MULTIPLICACION DE DOS NUMEROS");
                 Console.WriteLine("[5] DIVISION DE DOS NUMEROS");
                 Console.WriteLine("[6] 10 PRIMEROS NUMEROS PRIMOS");
+                Console.WriteLine("[7] FAHRENHEIT A CELSIUS");
+                Console.WriteLine("[8] CELSIUS A FAHRENHEIT");
                 Console.WriteLine("[0] SALIR");
                 Console.WriteLine("Ingrese una Opcion y Presione Enter");
                 opcion = Console.ReadLine();
+                double cel;
+                double fare;
                 switch (opcion)
                 {
                     case "1":
@@ -113,6 +126,18 @@ namespace ConsoleApp1
                     case "6":
                         Console.WriteLine("Estos son los 10 primeros numeros primos:");
                         Prim();
+                        Console.ReadKey();
+                        break;
+                    case "7":
+                        Console.WriteLine("Ingrese el valor de Fahrenheit");
+                        fare = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine(" {0} grados en Fahrenheits son {1} grados en Celsius", fare, Celsius(fare));
+                        Console.ReadKey();
+                        break;
+                    case "8":
+                        Console.WriteLine("Ingrese el valor de Celsius");
+                        cel = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine(" {0} grados en Celsius son {1} grados en Fahrenheits", cel, Fahrenheit(cel));
                         Console.ReadKey();
                         break;
 
