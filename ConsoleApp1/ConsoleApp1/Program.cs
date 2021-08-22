@@ -12,6 +12,18 @@ namespace ConsoleApp1
         {
             return a + b;
         }
+        static int Resta(int a, int b)
+        {
+            return a - b;
+        }
+        static int Mult(int a, int b)
+        {
+            return a * b;
+        }
+        static int Div(int a, int b)
+        {
+            return a / b;
+        }
         static void Raiz()
         {
             for (int i = 1; i <= 10; i++)
@@ -28,6 +40,9 @@ namespace ConsoleApp1
                 Console.Clear();
                 Console.WriteLine("[1] SUMA DE DOS NUMEROS");
                 Console.WriteLine("[2] IMPRIMIR LA RAIZ CUADRADA DE LOS PRIMEROS NUMEROS ENTEROS");
+                Console.WriteLine("[3] RESTA DE DOS NUMEROS");
+                Console.WriteLine("[4] MULTIPLICACION DE DOS NUMEROS");
+                Console.WriteLine("[5] DIVISION DE DOS NUMEROS");
                 Console.WriteLine("[0] SALIR");
                 Console.WriteLine("Ingrese una Opcion y Presione Enter");
                 opcion = Console.ReadLine();
@@ -44,6 +59,30 @@ namespace ConsoleApp1
                     case "2":
                         Console.WriteLine("Calculando ......");
                         Raiz();
+                        Console.ReadKey();
+                        break;
+                    case "3":
+                        Console.WriteLine("Ingrese El primer Numero");
+                        int c = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Ingrese El Segundo Numero");
+                        int d = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("La resta de {0} y {1} es: {2}", c, d, Resta(c, d));
+                        Console.ReadKey();
+                        break;
+                    case "4":
+                        Console.WriteLine("Ingrese El primer Numero");
+                        int e = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Ingrese El Segundo Numero");
+                        int f = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("La Multiplicacion de {0} y {1} es: {2}", e, f, Mult(e, f));
+                        Console.ReadKey();
+                        break;
+                    case "5":
+                        Console.WriteLine("Ingrese El primer Numero");
+                        int g = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Ingrese El Segundo Numero");
+                        int h = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("La Division de {0} y {1} es: {2}", g, h, Div(g, h));
                         Console.ReadKey();
                         break;
 
