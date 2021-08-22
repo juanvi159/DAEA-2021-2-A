@@ -24,6 +24,30 @@ namespace ConsoleApp1
         {
             return a / b;
         }
+        static void Prim()
+        {
+            int contador = 0;
+            int primos = 0;
+            int inicializador = 1;
+            do {
+                inicializador++;
+                for (int i = 2; i < inicializador; i++)
+                {
+                    if (inicializador % i == 0)
+                    {
+                        contador++;
+                        break;
+                    } 
+                }
+                if (contador == 0)
+                {
+                    Console.WriteLine(inicializador);
+                    primos++;
+                }
+                contador = 0;
+            } while (primos <= 10);
+            Console.ReadKey();
+        }
         static void Raiz()
         {
             for (int i = 1; i <= 10; i++)
@@ -43,6 +67,7 @@ namespace ConsoleApp1
                 Console.WriteLine("[3] RESTA DE DOS NUMEROS");
                 Console.WriteLine("[4] MULTIPLICACION DE DOS NUMEROS");
                 Console.WriteLine("[5] DIVISION DE DOS NUMEROS");
+                Console.WriteLine("[6] 10 PRIMEROS NUMEROS PRIMOS");
                 Console.WriteLine("[0] SALIR");
                 Console.WriteLine("Ingrese una Opcion y Presione Enter");
                 opcion = Console.ReadLine();
@@ -83,6 +108,11 @@ namespace ConsoleApp1
                         Console.WriteLine("Ingrese El Segundo Numero");
                         int h = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("La Division de {0} y {1} es: {2}", g, h, Div(g, h));
+                        Console.ReadKey();
+                        break;
+                    case "6":
+                        Console.WriteLine("Estos son los 10 primeros numeros primos:");
+                        Prim();
                         Console.ReadKey();
                         break;
 
