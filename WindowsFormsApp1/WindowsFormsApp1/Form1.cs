@@ -41,5 +41,18 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string dni = txtDNI.Text;
+            string nombre = txtNombre.Text;
+            string apellido = txtApellidos.Text;
+            string direccion = txtDireccion.Text;
+            string email = txtEmail.Text;
+            string telefono = txtTelefono.Text;
+            string fecha = txtFecha.Text;
+            dgvUsuarios.Rows.Add("", dni, nombre, apellido, direccion, telefono, fecha);
+
+        }
     }
 }
