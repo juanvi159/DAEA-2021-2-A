@@ -21,5 +21,10 @@ namespace Lab02_01
         {
 
         }
+
+        private void mnuSisSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
