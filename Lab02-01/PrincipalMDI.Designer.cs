@@ -75,7 +75,7 @@ namespace Lab02_01
             // mnuSisSalir
             // 
             this.mnuSisSalir.Name = "mnuSisSalir";
-            this.mnuSisSalir.Size = new System.Drawing.Size(180, 22);
+            this.mnuSisSalir.Size = new System.Drawing.Size(158, 22);
             this.mnuSisSalir.Text = "Salir del sistema";
             this.mnuSisSalir.Click += new System.EventHandler(this.mnuSisSalir_Click);
             // 
@@ -94,32 +94,34 @@ namespace Lab02_01
             // mnuManUsuarios
             // 
             this.mnuManUsuarios.Name = "mnuManUsuarios";
-            this.mnuManUsuarios.Size = new System.Drawing.Size(139, 22);
+            this.mnuManUsuarios.Size = new System.Drawing.Size(180, 22);
             this.mnuManUsuarios.Text = "Usuarios";
             this.mnuManUsuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // mnuManProductos
             // 
             this.mnuManProductos.Name = "mnuManProductos";
-            this.mnuManProductos.Size = new System.Drawing.Size(139, 22);
+            this.mnuManProductos.Size = new System.Drawing.Size(180, 22);
             this.mnuManProductos.Text = "Productos";
+            this.mnuManProductos.Click += new System.EventHandler(this.mnuManProductos_Click);
             // 
             // mnuManCategorias
             // 
             this.mnuManCategorias.Name = "mnuManCategorias";
-            this.mnuManCategorias.Size = new System.Drawing.Size(139, 22);
+            this.mnuManCategorias.Size = new System.Drawing.Size(180, 22);
             this.mnuManCategorias.Text = "Categorias";
             // 
             // mnuManProveedores
             // 
             this.mnuManProveedores.Name = "mnuManProveedores";
-            this.mnuManProveedores.Size = new System.Drawing.Size(139, 22);
+            this.mnuManProveedores.Size = new System.Drawing.Size(180, 22);
             this.mnuManProveedores.Text = "Proveedores";
+            this.mnuManProveedores.Click += new System.EventHandler(this.mnuManProveedores_Click);
             // 
             // mnuManClientes
             // 
             this.mnuManClientes.Name = "mnuManClientes";
-            this.mnuManClientes.Size = new System.Drawing.Size(139, 22);
+            this.mnuManClientes.Size = new System.Drawing.Size(180, 22);
             this.mnuManClientes.Text = "Clientes";
             // 
             // procesosToolStripMenuItem
@@ -134,13 +136,13 @@ namespace Lab02_01
             // mnuProcVenta
             // 
             this.mnuProcVenta.Name = "mnuProcVenta";
-            this.mnuProcVenta.Size = new System.Drawing.Size(180, 22);
+            this.mnuProcVenta.Size = new System.Drawing.Size(166, 22);
             this.mnuProcVenta.Text = "Registrar Venta";
             // 
             // mnuProcCompra
             // 
             this.mnuProcCompra.Name = "mnuProcCompra";
-            this.mnuProcCompra.Size = new System.Drawing.Size(180, 22);
+            this.mnuProcCompra.Size = new System.Drawing.Size(166, 22);
             this.mnuProcCompra.Text = "Registrar Compra";
             // 
             // reportesToolStripMenuItem
@@ -203,6 +205,7 @@ namespace Lab02_01
             this.Name = "PrincipalMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

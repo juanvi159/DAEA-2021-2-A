@@ -19,12 +19,24 @@ namespace Lab02_01
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            manUsuario frm = new manUsuario();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void mnuSisSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mnuManProductos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuManProveedores_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
