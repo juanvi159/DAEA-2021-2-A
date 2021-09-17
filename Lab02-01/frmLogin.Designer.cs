@@ -65,6 +65,7 @@ namespace Lab02_01
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(232, 21);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtPassword_MaskInputRejected);
             // 
             // btnCancelar
             // 
@@ -102,6 +103,7 @@ namespace Lab02_01
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(233, 21);
             this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label3
             // 

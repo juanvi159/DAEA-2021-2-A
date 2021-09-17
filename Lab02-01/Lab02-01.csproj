@@ -52,6 +52,24 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="manCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manCliente.Designer.cs">
+      <DependentUpon>manCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manProductos.Designer.cs">
+      <DependentUpon>manProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manProviders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manProviders.Designer.cs">
+      <DependentUpon>manProviders.cs</DependentUpon>
+    </Compile>
     <Compile Include="manUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +86,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manCliente.resx">
+      <DependentUpon>manCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manProductos.resx">
+      <DependentUpon>manProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manProviders.resx">
+      <DependentUpon>manProviders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manUsuario.resx">
       <DependentUpon>manUsuario.cs</DependentUpon>

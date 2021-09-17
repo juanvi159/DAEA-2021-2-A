@@ -16,7 +16,8 @@ namespace Lab02_01
         {
             InitializeComponent();
         }
-
+        string usuario = "Vicente Obando";
+        string contraseña = "4444";
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -29,14 +30,34 @@ namespace Lab02_01
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            PrincipalMDI principal = new PrincipalMDI();
-            principal.Show();
-            this.Hide();
+            string user = txtUsuario.Text;
+            string password = txtPassword.Text;
+            if (user.Equals(usuario))
+            {
+                if (password.Equals(contraseña))
+                {
+                    MessageBox.Show("Bienvenido " + user);
+                    PrincipalMDI principal = new PrincipalMDI();
+                    principal.Show();
+                    this.Hide();
+                }
+
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
