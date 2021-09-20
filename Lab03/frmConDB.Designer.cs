@@ -118,6 +118,7 @@ namespace Lab03
             this.chkAutenticacion.TabIndex = 8;
             this.chkAutenticacion.Text = "Autenticacion integrada";
             this.chkAutenticacion.UseVisualStyleBackColor = true;
+            this.chkAutenticacion.CheckedChanged += new System.EventHandler(this.chkAutenticacion_CheckedChanged);
             // 
             // btnConectar
             // 
@@ -137,6 +138,7 @@ namespace Lab03
             this.btnEstado.TabIndex = 10;
             this.btnEstado.Text = "Estado";
             this.btnEstado.UseVisualStyleBackColor = true;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
             // 
             // btnDesconectar
             // 
@@ -147,6 +149,7 @@ namespace Lab03
             this.btnDesconectar.TabIndex = 11;
             this.btnDesconectar.Text = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // frmConDB
             // 

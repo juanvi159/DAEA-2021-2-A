@@ -54,5 +54,57 @@ namespace Lab03
                 MessageBox.Show("Error al conectar el Servidor: \n" + ex.ToString());
             }
         }
+
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            //Intentamos obtener el estado de la conexion, y en caso esté abierta,
+            //recuperamos informacion de la misma
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    MessageBox.Show("Estado del Servidor: " + conn.State +
+                        "\nVersion del Servidor: " + conn.ServerVersion +
+                        "\nBase de datos: " + conn.Database);
+                else
+                    MessageBox.Show("Estado del Servidor: " + conn.State);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Imposible determinar el estado del Servidor: \n" + ex.ToString());
+            }
+        }
+
+        private void btnDesconectar_Click(object sender, EventArgs e)
+        {
+            //Para cerrar la conexion verificamos que no este cerrada
+            try
+            {
+                if (conn.State != ConnectionState.Closed)
+                {
+                    conn.Close();
+                    MessageBox.Show("Conexion cerrada satisfactoriamente");
+                }
+                else
+                    MessageBox.Show("La conexion ya esta cerrada");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al cerrar la conexion: \n" + ex.ToString());
+            }
+        }
+
+        private void chkAutenticacion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutenticacion.Checked)
+            {
+                txtUsuario.Enabled = false;
+                txtPassword.Enabled = false;
+            }
+            else
+            {
+                txtUsuario.Enabled = true;
+                txtPassword.Enabled = true;
+            }
+        }
     }
 }
