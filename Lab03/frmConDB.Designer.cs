@@ -41,6 +41,7 @@ namespace Lab03
             this.btnConectar = new System.Windows.Forms.Button();
             this.btnEstado = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
+            this.btnPersona = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,6 +59,8 @@ namespace Lab03
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(223, 20);
             this.txtServidor.TabIndex = 1;
+            this.txtServidor.Text = "LAPTOP-QDCS59UR\\LOCAL";
+            this.txtServidor.TextChanged += new System.EventHandler(this.txtServidor_TextChanged);
             // 
             // txtPassword
             // 
@@ -82,6 +85,7 @@ namespace Lab03
             this.txtBaseDatos.Name = "txtBaseDatos";
             this.txtBaseDatos.Size = new System.Drawing.Size(223, 20);
             this.txtBaseDatos.TabIndex = 5;
+            this.txtBaseDatos.Text = "db_lab03";
             // 
             // label3
             // 
@@ -151,11 +155,22 @@ namespace Lab03
             this.btnDesconectar.UseVisualStyleBackColor = true;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
+            // btnPersona
+            // 
+            this.btnPersona.Location = new System.Drawing.Point(320, 193);
+            this.btnPersona.Name = "btnPersona";
+            this.btnPersona.Size = new System.Drawing.Size(91, 37);
+            this.btnPersona.TabIndex = 12;
+            this.btnPersona.Text = "Personas";
+            this.btnPersona.UseVisualStyleBackColor = true;
+            this.btnPersona.Click += new System.EventHandler(this.btnPersona_Click);
+            // 
             // frmConDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 242);
+            this.Controls.Add(this.btnPersona);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.btnEstado);
             this.Controls.Add(this.btnConectar);
@@ -190,6 +205,7 @@ namespace Lab03
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Button btnPersona;
     }
 }
 

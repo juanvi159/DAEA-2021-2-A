@@ -83,6 +83,7 @@ namespace Lab03
                 {
                     conn.Close();
                     MessageBox.Show("Conexion cerrada satisfactoriamente");
+                    btnDesconectar.Enabled = false;
                 }
                 else
                     MessageBox.Show("La conexion ya esta cerrada");
@@ -105,6 +106,17 @@ namespace Lab03
                 txtUsuario.Enabled = true;
                 txtPassword.Enabled = true;
             }
+        }
+
+        private void txtServidor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPersona_Click(object sender, EventArgs e)
+        {
+            Persona persona = new Persona(conn);
+            persona.Show();
         }
     }
 }
