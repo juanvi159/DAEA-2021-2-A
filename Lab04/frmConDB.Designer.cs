@@ -157,9 +157,9 @@ namespace Lab03
             // 
             // btnPersona
             // 
-            this.btnPersona.Location = new System.Drawing.Point(320, 193);
+            this.btnPersona.Location = new System.Drawing.Point(414, 145);
             this.btnPersona.Name = "btnPersona";
-            this.btnPersona.Size = new System.Drawing.Size(91, 37);
+            this.btnPersona.Size = new System.Drawing.Size(117, 24);
             this.btnPersona.TabIndex = 12;
             this.btnPersona.Text = "Personas";
             this.btnPersona.UseVisualStyleBackColor = true;
