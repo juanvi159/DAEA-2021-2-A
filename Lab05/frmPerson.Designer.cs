@@ -30,6 +30,8 @@ namespace Lab05
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtEnrollmentDate = new System.Windows.Forms.TextBox();
+            this.txtHireDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,14 +46,14 @@ namespace Lab05
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.txtHireDate = new System.Windows.Forms.TextBox();
-            this.txtEnrollmentDate = new System.Windows.Forms.TextBox();
+            this.btnCursos = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCursos);
             this.groupBox2.Controls.Add(this.txtEnrollmentDate);
             this.groupBox2.Controls.Add(this.txtHireDate);
             this.groupBox2.Controls.Add(this.label5);
@@ -68,6 +70,20 @@ namespace Lab05
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Persona";
+            // 
+            // txtEnrollmentDate
+            // 
+            this.txtEnrollmentDate.Location = new System.Drawing.Point(208, 118);
+            this.txtEnrollmentDate.Name = "txtEnrollmentDate";
+            this.txtEnrollmentDate.Size = new System.Drawing.Size(133, 20);
+            this.txtEnrollmentDate.TabIndex = 10;
+            // 
+            // txtHireDate
+            // 
+            this.txtHireDate.Location = new System.Drawing.Point(10, 118);
+            this.txtHireDate.Name = "txtHireDate";
+            this.txtHireDate.Size = new System.Drawing.Size(154, 20);
+            this.txtHireDate.TabIndex = 9;
             // 
             // label5
             // 
@@ -196,19 +212,15 @@ namespace Lab05
             this.dgvListado.TabIndex = 6;
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
             // 
-            // txtHireDate
+            // btnCursos
             // 
-            this.txtHireDate.Location = new System.Drawing.Point(10, 118);
-            this.txtHireDate.Name = "txtHireDate";
-            this.txtHireDate.Size = new System.Drawing.Size(154, 20);
-            this.txtHireDate.TabIndex = 9;
-            // 
-            // txtEnrollmentDate
-            // 
-            this.txtEnrollmentDate.Location = new System.Drawing.Point(208, 118);
-            this.txtEnrollmentDate.Name = "txtEnrollmentDate";
-            this.txtEnrollmentDate.Size = new System.Drawing.Size(133, 20);
-            this.txtEnrollmentDate.TabIndex = 10;
+            this.btnCursos.Location = new System.Drawing.Point(266, 20);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(75, 23);
+            this.btnCursos.TabIndex = 11;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
             // frmPerson
             // 
@@ -249,6 +261,7 @@ namespace Lab05
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.TextBox txtEnrollmentDate;
         private System.Windows.Forms.TextBox txtHireDate;
+        private System.Windows.Forms.Button btnCursos;
     }
 }
 

@@ -12,24 +12,25 @@ using System.Data;
 
 namespace Lab05
 {
-    public partial class frmPerson : Form
+    public partial class Cursos : Form
     {
         SqlConnection con;
-        public frmPerson()
+        public Cursos()
         {
             InitializeComponent();
         }
-
-        private void frmPerson_Load(object sender, EventArgs e)
+        private void Cursos_Load(object sender, EventArgs e)
         {
             String str = "Server=LAPTOP-QDCS59UR\\LOCAL;DataBase=School;Integrated Security=true;";
             con = new SqlConnection(str);
         }
-
-        private void btnListar_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+        private void btnListar2_Click(object sender, EventArgs e)
         {
             con.Open();
-            String sql = "SELECT * FROM Person";
+            String sql = "SELECT * FROM Course";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -41,33 +42,30 @@ namespace Lab05
             con.Close();
         }
 
-        private void btnInsertar_Click(object sender, EventArgs e)
+        private void btnInsertar2_Click(object sender, EventArgs e)
         {
             con.Open();
-            String sp = "InsertPerson";
+            String sp = "InsertCourse";
             SqlCommand cmd = new SqlCommand(sp, con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-            cmd.Parameters.AddWithValue("HireDate", txtHireDate.Text);
-            cmd.Parameters.AddWithValue("EnrollmentDate", txtEnrollmentDate.Text);
+            cmd.Parameters.AddWithValue("@Title", txtTitle.Text);
+            cmd.Parameters.AddWithValue("@Credits", txtCredits.Text);
+            cmd.Parameters.AddWithValue("DepartamentID", txtDepartamentID.Text);
 
             int codigo = Convert.ToInt32(cmd.ExecuteScalar());
-            MessageBox.Show("Se ha registrado nueva persona con el codigo: " + codigo);
+            MessageBox.Show("Se ha registrado nuevo Curso con codigo: " + codigo);
             con.Close();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificar2_Click(object sender, EventArgs e)
         {
             con.Open();
-            String sp = "UpdatePerson";
+            String sp = "UpdateCourse";
             SqlCommand cmd = new SqlCommand(sp, con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PersonID", txtPersonID.Text);
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-            cmd.Parameters.AddWithValue("HireDate", txtHireDate.Text);
-            cmd.Parameters.AddWithValue("EnrollmentDate", txtEnrollmentDate.Text);
+            cmd.Parameters.AddWithValue("@Title", txtTitle.Text);
+            cmd.Parameters.AddWithValue("@Credits", txtCredits.Text);
+            cmd.Parameters.AddWithValue("DepartamentID", txtDepartamentID.Text);
 
             int resultado = cmd.ExecuteNonQuery();
             if (resultado > 0)
@@ -77,13 +75,13 @@ namespace Lab05
             con.Close();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar2_Click(object sender, EventArgs e)
         {
             con.Open();
-            String sp = "DeletePerson";
+            String sp = "DeleteCourse";
             SqlCommand cmd = new SqlCommand(sp, con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PersonID", txtPersonID.Text);
+            cmd.Parameters.AddWithValue("@PersonID", txtCursosID.Text);
 
             int resultado = cmd.ExecuteNonQuery();
 
@@ -94,22 +92,20 @@ namespace Lab05
             con.Close();
         }
 
+        private void dgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvListado.SelectedRows.Count > 0)
             {
-                txtPersonID.Text = dgvListado.SelectedRows[0].Cells[0].Value.ToString();
-                txtFirstName.Text = dgvListado.SelectedRows[0].Cells[1].Value.ToString();
-                txtLastName.Text = dgvListado.SelectedRows[0].Cells[2].Value.ToString();
-                txtHireDate.Text = dgvListado.SelectedRows[0].Cells[3].Value.ToString();
-                txtEnrollmentDate.Text = dgvListado.SelectedRows[0].Cells[4].Value.ToString();
+                txtCursosID.Text = dgvListado.SelectedRows[0].Cells[0].Value.ToString();
+                txtTitle.Text = dgvListado.SelectedRows[0].Cells[1].Value.ToString();
+                txtCredits.Text = dgvListado.SelectedRows[0].Cells[2].Value.ToString();
+                txtDepartamentID.Text = dgvListado.SelectedRows[0].Cells[3].Value.ToString();
             }
-        }
-
-        private void btnCursos_Click(object sender, EventArgs e)
-        {
-            Cursos cursos = new Cursos();
-            cursos.Show();
         }
     }
 }
