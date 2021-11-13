@@ -16,7 +16,7 @@ namespace lab10
             //origen de datos
             NorthwndDataContext context = new NorthwndDataContext();
 
-            //creacion de consulta: ALL PRODUCTS
+            ////creacion de consulta: ALL PRODUCTS
             //var query = from p in context.Products
             //            select p;
 
@@ -51,17 +51,51 @@ namespace lab10
             //            where p.UnitsInStock == 0
             //            select p;
 
-            //creacion de consulta: Nombre de productos descontinuados
-            var query = from p in context.Products
-                        where p.Discontinued == true
-                        select p;
+            ////creacion de consulta: Nombre de productos descontinuados
+            //var query = from p in context.Products
+            //            where p.Discontinued == true
+            //            select p;
 
 
-            //Ejecucion de consulta
-            foreach (var prod in query)
-            {
-                Console.WriteLine("ID={0} \t Price={1} \t Name={2}", prod.ProductID, prod.UnitPrice, prod.ProductName);
-            }
+            ////Ejecucion de consulta
+            //foreach (var prod in query)
+            //{
+            //    Console.WriteLine("ID={0} \t Price={1} \t Name={2}", prod.ProductID, prod.UnitPrice, prod.ProductName);
+            //}
+
+            ////INSERTAR REGISTRO
+            //Products p = new Products();
+            //p.ProductName = "Peruvian Coffe";
+            //p.SupplierID = 20;
+            //p.CategoryID = 1;
+            //p.QuantityPerUnit = "10 pkgs";
+            //p.UnitPrice = 25;
+
+            ////Ejecucion de consulta
+            //context.Products.InsertOnSubmit(p);
+            //context.SubmitChanges();
+
+
+            ////MODIFICAR REGISTRO
+            //var product = (from p in context.Products
+            //               where p.ProductName == "Tofu"
+            //               select p).FirstOrDefault();
+
+            //product.UnitPrice = 100;
+            //product.UnitsInStock = 15;
+            //product.Discontinued = true;
+
+            ////Ejecucion de consulta
+            //context.SubmitChanges();
+
+            ////ELIMINAR REGISTRO
+            //var product = (from p in context.Products
+            //               where p.ProductID == 78
+            //               select p).FirstOrDefault();
+
+            ////Ejecucion de consulta
+            //context.Products.DeleteOnSubmit(product);
+            //context.SubmitChanges();
 
             Console.ReadKey();
         }
