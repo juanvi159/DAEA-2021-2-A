@@ -123,6 +123,142 @@ namespace lab11_A
             //    }
             //    Console.ReadKey();
             //}
+
+            ////Se devuelven los pedidos en los que la cantidad de pedido es superior a 2 e inferior a 6
+            ////
+            //int orderQtyMin = 2;
+            //int orderQtMax = 6;
+            //using (AdventureWorksEntities context = new AdventureWorksEntities())
+            //{
+            //    var query = from order in context.SalesOrderDetail
+            //                where order.OrderQty > orderQtyMin
+            //                && order.OrderQty < orderQtMax
+            //                select new
+            //                {
+            //                    SalesOrderID = order.SalesOrderID,
+            //                    OrderQty = order.OrderQty
+            //                };
+            //    foreach (var order in query)
+            //    {
+            //        Console.WriteLine("Order ID: {0} Order Quantity: {1}",
+            //                order.SalesOrderID, order.OrderQty);
+            //    }
+            //    Console.ReadKey();
+            //}
+
+            ////Se devuelven todos los productos de color rojo
+            ////
+            //String color = "Red";
+            //using (AdventureWorksEntities context = new AdventureWorksEntities())
+            //{
+            //    var query = from product in context.Product
+            //                where product.Color == color
+            //                select new
+            //                {
+            //                    Name = product.Name,
+            //                    ProductNumber = product.ProductNumber,
+            //                    ListPrice = product.ListPrice
+            //                };
+            //    foreach (var product in query)
+            //    {
+            //        Console.WriteLine("Name: {0}", product.Name);
+            //        Console.WriteLine("Product number: {0}", product.ProductNumber);
+            //        Console.WriteLine("List price: ${0}", product.ListPrice);
+            //        Console.WriteLine("");
+            //    }
+            //    Console.ReadKey();
+            //}
+
+            ////Usa una matriz como parte de una cláusula Where…Contains para encontrar todos los productos que tienen un ProductModelID que coincide con un valor de la matriz
+            ////
+            //using (AdventureWorksEntities AWEntities = new AdventureWorksEntities())
+            //{
+            //    int?[] productModelIds = { 19, 26, 118 };
+            //    var products = from p in AWEntities.Product
+            //                   where productModelIds.Contains(p.ProductModelID)
+            //                   select p;
+            //    foreach (var product in products)
+            //    {
+            //        Console.WriteLine("{0}: {1}",
+            //            product.ProductModelID, product.ProductID);
+            //    }
+            //    Console.ReadKey();
+            //}
+
+            ////Utiliza orderby… descending, que es equivalente al método OrderByDescending, para ordenar el precio de venta de mayor a menor
+            ////
+            //using (AdventureWorksEntities context = new AdventureWorksEntities())
+            //{
+            //    IQueryable<Decimal> sortedPrices = from p in context.Product
+            //                                       orderby p.ListPrice descending
+            //                                       select p.ListPrice;
+            //    Console.WriteLine("Lista de precios desde el más alto al más bajo:");
+            //    foreach (Decimal price in sortedPrices)
+            //    {
+            //        Console.WriteLine(price);
+            //    }
+            //    Console.ReadKey();
+            //}
+
+            ////Usa el método Average para encontrar el precio de venta promedio de los productos de cada estilo
+            ////
+            //using (AdventureWorksEntities context = new AdventureWorksEntities())
+            //{
+            //    var products = context.Product;
+            //    var query = from product in products
+            //                group product by product.Style into g
+            //                select new
+            //                {
+            //                    Style = g.Key,
+            //                    AverageListPrice = g.Average(product => product.ListPrice)
+            //                };
+            //    foreach (var product in query)
+            //    {
+            //        Console.WriteLine("Estilo: {0} Precio promedio: {1}",
+            //            product.Style, product.AverageListPrice);
+            //    }
+            //    Console.ReadKey();
+            //}
+
+            ////Se agrupan los productos por colores y se utiliza Count para devolver el número de productos de cada grupo de color
+            ////
+            //using (AdventureWorksEntities context = new AdventureWorksEntities())
+            //{
+            //    var products = context.Product;
+            //    var query = from product in products
+            //                group product by product.Color into g
+            //                select new
+            //                {
+            //                    Color = g.Key,
+            //                    ProductCount = g.Count()
+            //                };
+            //    foreach (var product in query)
+            //    {
+            //        Console.WriteLine("Color = {0} \t Cantidad = {1}",
+            //            product.Color, product.ProductCount);
+            //    }
+            //    Console.ReadKey();
+            //}
+
+            ////Se utiliza el método Max para obtener el mayor importe total a pagar de cada identificador de contacto
+            //using (AdventureWorksEntities eje16 = new AdventureWorksEntities())
+            //{
+            //    var orders = eje16.SalesOrderHeader;
+            //    var query = from order in orders
+            //                group order by order.SalesPersonID into g
+            //                select new
+            //                {
+            //                    Category = g.Key,
+            //                    maxTotalDue = g.Max(order => order.TotalDue)
+            //                };
+            //    foreach (var order in query)
+            //    {
+            //        Console.WriteLine("Person ID: {0} TotalDue Máximo: {1}",
+            //                order.Category, order.maxTotalDue);
+            //    }
+            //    Console.ReadKey();
+            //}
+
         }
     }
 }
