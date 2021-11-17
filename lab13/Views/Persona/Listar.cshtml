@@ -1,0 +1,32 @@
+﻿
+@Model List<lab13.Models.Persona>
+    @{
+        ViewBag.Title = "Listar";
+    }
+
+    <h2>Listado de personas</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>PersonaID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha Nacimiento</th>
+            <th>Dirección</th>
+            <th>Email</th>
+        </tr>
+        @foreach (var persona in Model)
+        {
+            <tr>
+                <th>@persona.PersonaID</th>
+                <td>@persona.Nombre</td>
+                <td>@persona.Apellido</td>
+                <td>@persona.FechaNac</td>
+                <td>@persona.Direccion</td>
+                <td>@persona.Email</td>
+                <td>@Html.ActionLink("Ver", "Mostrar", "Persona", 
+                                    new { id = persona.PersonaID}, null)</td>
+            </tr>
+        }
+
+    </table>
