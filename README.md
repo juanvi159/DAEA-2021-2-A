@@ -1,6 +1,6 @@
 # DAEA-2021-2-A
 ## Laboratorio 14
-En el presente documento se presentan las difentes vistas creadas para el Laboratorio
+En el presente documento se presentan las difentes vistas mostradas en la ejecucion del proyecto
 ### Index
 Vista general de los datos de la tabla
 <img src="https://i.postimg.cc/Zqyc22ds/Lab14-ejem1.jpg" width="800">
