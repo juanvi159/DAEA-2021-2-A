@@ -74,5 +74,64 @@ namespace Lab15.Controllers
             ViewBag.ReportViewer = rptviewer;
             return View();
         }
+        public ActionResult Graficos()
+        {
+            return View();
+        }
+
+        public ActionResult GraficoColumnas()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+            var query = (from c in Contexto.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+            new Chart(width: 600, height: 400, theme: ChartTheme.Green)
+                .AddTitle("Columnas")
+                .AddSeries("Default", chartType: "Column", xValue: x, yValues: y)
+                .Write("bmp");
+            return null;
+        }
+        public ActionResult GraficoBarras()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+            var query = (from c in Contexto.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+            new Chart(width: 600, height: 400, theme: ChartTheme.Vanilla3D)
+                .AddTitle("Grafico de barras")
+                .AddSeries("Default", chartType: "Bar", xValue: x, yValues: y)
+                .Write("bmp");
+            return null;
+        }
+
+        public ActionResult GraficoTarta()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+            var query = (from c in Contexto.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+            new Chart(width: 600, height: 400, theme: ChartTheme.Blue)
+                .AddTitle("PIE")
+                .AddSeries("Default", chartType: "Pie", xValue: x, yValues: y)
+                .Write("bmp");
+            return null;
+        }
+
+        public ActionResult GraficoRadar()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+            var query = (from c in Contexto.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+            new Chart(width: 600, height: 400, theme: ChartTheme.Yellow)
+                .AddTitle("Radar")
+                .AddSeries("Default", chartType: "Radar", xValue: x, yValues: y)
+                .Write("bmp");
+            return null;
+        }
     }
 }
